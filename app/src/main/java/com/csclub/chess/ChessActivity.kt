@@ -17,6 +17,6 @@ class ChessActivity : AppCompatActivity(), ChessView {
                           eligibleMovementSquares: List<ChessSquare>,
                           capturedBlackPieces: List<ChessPiece>,
                           capturedWhitePieces: List<ChessPiece>) {
-        TODO("Not yet implemented")
+        // TODO("Not yet implemented")
     }
 }

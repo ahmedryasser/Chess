@@ -1,6 +1,6 @@
 package com.csclub.chess
 
-class Knight(override val player: Player) : ChessPiece(player) {
+class Knight(override val player: Player) : ChessPiece() {
     override fun obeysMovementRules(board: ChessBoard, from: ChessSquare, to: ChessSquare): Boolean {
         // Returns true if the Knight could move from 'from' to 'to' on an empty board
         // A knight can move in a "knight's-move" pattern; two squares along either the rank or file, and then one perpendicular to those two

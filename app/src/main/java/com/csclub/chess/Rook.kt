@@ -1,6 +1,6 @@
 package com.csclub.chess
 
-class Rook(override val player: Player) : ChessPiece(player) {
+class Rook(override val player: Player) : ChessPiece() {
     override fun obeysMovementRules(board: ChessBoard, from: ChessSquare, to: ChessSquare): Boolean {
         // Returns true if the Rook could move from 'from' to 'to' on an empty board
         // A rook can move to any square on the same rank or file

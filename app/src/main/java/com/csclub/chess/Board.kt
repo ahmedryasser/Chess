@@ -4,6 +4,8 @@ const val BOARD_SIZE = 8
 typealias ChessBoard = List<List<ChessPiece?>>
 typealias MutableChessBoard = MutableList<MutableList<ChessPiece?>>
 
+fun makeEmptyBoard(): MutableChessBoard = MutableList(BOARD_SIZE) { MutableList(BOARD_SIZE) { null } }
+
 inline fun <reified T : ChessPiece> ChessBoard.indicesOf(player: Player): List<ChessSquare> {
     val indices = mutableListOf<ChessSquare>()
     for ((i, file) in this.withIndex()) {

@@ -1,6 +1,6 @@
 package com.csclub.chess
 
-class King(override val player: Player) : ChessPiece(player) {
+class King(override val player: Player) : ChessPiece() {
     override fun obeysMovementRules(board: ChessBoard, from: ChessSquare, to: ChessSquare): Boolean {
         // Returns true if the King could move from 'from' to 'to' on an empty board
         // A king can move to any adjacent square

@@ -1,6 +1,6 @@
 package com.csclub.chess
 
-class Pawn(override val player: Player) : ChessPiece(player) {
+class Pawn(override val player: Player) : ChessPiece() {
     override fun obeysMovementRules(board: ChessBoard, from: ChessSquare, to: ChessSquare): Boolean {
         // Returns true if the Pawn could move from 'from' to 'to' on an empty board
         // A pawn can move forward one square always, one square forward and one to the side to capture,

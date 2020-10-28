@@ -1,6 +1,6 @@
 package com.csclub.chess
 
-class Bishop(override val player: Player) : ChessPiece(player) {
+class Bishop(override val player: Player) : ChessPiece() {
     override fun obeysMovementRules(board: ChessBoard, from: ChessSquare, to: ChessSquare): Boolean {
         // Returns true if the Bishop could move from 'from' to 'to' on an empty board
         // A bishop can move along one of the diagonals

@@ -1,6 +1,6 @@
 package com.csclub.chess
 
-class Queen(override val player: Player) : ChessPiece(player) {
+class Queen(override val player: Player) : ChessPiece() {
     override fun obeysMovementRules(board: ChessBoard, from: ChessSquare, to: ChessSquare): Boolean {
         // Returns true if the Queen could move from 'from' to 'to' on an empty board
         // A queen can move to any square on the same rank or file, or along one of the diagonals
