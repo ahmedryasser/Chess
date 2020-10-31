@@ -1,6 +1,6 @@
 package com.csclub.chess
 
-abstract class ChessPiece() {
+abstract class ChessPiece {
     abstract val player: Player
     var hasMoved = false
 
