@@ -12,6 +12,6 @@ class King(override val player: Player) : ChessPiece() {
     override fun arePiecesInWay(board: ChessBoard, from: ChessSquare, to: ChessSquare): Boolean {
         // Returns true if there are pieces between 'from' (exclusive) and 'to' (inclusive)
         // that would prevent the piece from moving there, or false otherwise
-        return board[to.rank][to.file]?.player != player
+        return board[to.rank][to.file]?.player == player
     }
 }

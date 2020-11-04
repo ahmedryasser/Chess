@@ -18,12 +18,6 @@ inline fun <reified T : ChessPiece> ChessBoard.indicesOf(player: Player): List<C
     return indices
 }
 
-fun ChessBoard.isEmptyOrCapturable(square: ChessSquare, player: Player): Boolean {
-    // TODO
-
-    return true
-}
-
 fun ChessBoard.wouldPutKingInCheck(from: ChessSquare, to: ChessSquare, player: Player): Boolean {
     // TODO
     // Returns true if, after moving the piece from 'from' to 'to', the opposite player could capture player's king
