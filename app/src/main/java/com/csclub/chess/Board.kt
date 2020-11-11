@@ -5,6 +5,7 @@ typealias ChessBoard = List<List<ChessPiece?>>
 typealias MutableChessBoard = MutableList<MutableList<ChessPiece?>>
 
 fun makeEmptyBoard(): MutableChessBoard = MutableList(BOARD_SIZE) { MutableList(BOARD_SIZE) { null } }
+fun ChessBoard.makeCopy(): MutableChessBoard = MutableList(BOARD_SIZE) { this[it].slice(this[it].indices).toMutableList() }
 
 inline fun <reified T : ChessPiece> ChessBoard.indicesOf(player: Player): List<ChessSquare> {
     val indices = mutableListOf<ChessSquare>()
@@ -19,7 +20,22 @@ inline fun <reified T : ChessPiece> ChessBoard.indicesOf(player: Player): List<C
 }
 
 fun ChessBoard.wouldPutKingInCheck(from: ChessSquare, to: ChessSquare, player: Player): Boolean {
-    // TODO
-    // Returns true if, after moving the piece from 'from' to 'to', the opposite player could capture player's king
+    val boardCopy = this.makeCopy()
+    val temp = boardCopy[from.file][from.rank]
+    return temp?.let {
+        boardCopy[from.file][from.rank] = null
+        boardCopy[to.file][to.rank] = it
+        val tempHasMoved = it.hasMoved
+        it.hasMoved = true
+        val isInCheck = boardCopy.isKingInCheck(player)
+        it.hasMoved = tempHasMoved
+        isInCheck
+    } ?: throw IllegalStateException("No piece found at square $from")
+}
+
+fun ChessBoard.isKingInCheck(player: Player): Boolean {
+    // Returns true if the king of the player given is in check; that is, if any of the enemy's pieces threaten the square the king is on
+    val playerKingSquare = this.indicesOf<King>(player)
+    val enemyPlayersPieces = this.indicesOf<ChessPiece>(if (player == Player.WHITE) Player.BLACK else Player.WHITE)
     return false
 }

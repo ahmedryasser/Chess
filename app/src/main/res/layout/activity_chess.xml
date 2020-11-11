@@ -7,12 +7,674 @@
     tools:context=".ChessActivity">
 
     <TextView
+        android:id="@+id/black_player_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/chessboard"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/chessboard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_chessboard"
+        android:scaleType="fitCenter"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toBottomOf="@id/black_player_score"
+        app:layout_constraintBottom_toTopOf="@id/white_player_score"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_0_file_0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@id/chessboard"
+        app:layout_constraintStart_toStartOf="@id/chessboard"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_0_file_1"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_1_file_0"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_0_file_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@id/chessboard"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_0_file_0"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_0_file_2"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_1_file_1"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_0_file_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@id/chessboard"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_0_file_1"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_0_file_3"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_1_file_2"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_0_file_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@id/chessboard"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_0_file_2"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_0_file_4"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_1_file_3"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_0_file_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@id/chessboard"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_0_file_3"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_0_file_5"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_1_file_4"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_0_file_5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@id/chessboard"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_0_file_4"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_0_file_6"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_1_file_5"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_0_file_6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@id/chessboard"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_0_file_5"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_0_file_7"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_1_file_6"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_0_file_7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@id/chessboard"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_0_file_6"
+        app:layout_constraintEnd_toEndOf="@id/chessboard"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_1_file_7"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_1_file_0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_0_file_0"
+        app:layout_constraintStart_toStartOf="@id/chessboard"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_1_file_1"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_2_file_0"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_1_file_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_0_file_1"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_1_file_0"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_1_file_2"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_2_file_1"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_1_file_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_0_file_2"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_1_file_1"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_1_file_3"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_2_file_2"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_1_file_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_0_file_3"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_1_file_2"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_1_file_4"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_2_file_3"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_1_file_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_0_file_4"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_1_file_3"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_1_file_5"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_2_file_4"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_1_file_5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_0_file_5"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_1_file_4"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_1_file_6"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_2_file_5"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_1_file_6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_0_file_6"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_1_file_5"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_1_file_7"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_2_file_6"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_1_file_7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_0_file_7"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_1_file_6"
+        app:layout_constraintEnd_toEndOf="@id/chessboard"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_2_file_7"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_2_file_0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_1_file_0"
+        app:layout_constraintStart_toStartOf="@id/chessboard"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_2_file_1"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_3_file_0"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_2_file_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_1_file_1"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_2_file_0"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_2_file_2"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_3_file_1"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_2_file_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_1_file_2"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_2_file_1"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_2_file_3"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_3_file_2"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_2_file_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_1_file_3"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_2_file_2"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_2_file_4"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_3_file_3"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_2_file_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_1_file_4"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_2_file_3"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_2_file_5"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_3_file_4"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_2_file_5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_1_file_5"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_2_file_4"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_2_file_6"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_3_file_5"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_2_file_6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_1_file_6"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_2_file_5"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_2_file_7"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_3_file_6"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_2_file_7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_1_file_7"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_2_file_6"
+        app:layout_constraintEnd_toEndOf="@id/chessboard"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_3_file_7"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_3_file_0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_2_file_0"
+        app:layout_constraintStart_toStartOf="@id/chessboard"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_3_file_1"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_4_file_0"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_3_file_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_2_file_1"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_3_file_0"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_3_file_2"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_4_file_1"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_3_file_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_2_file_2"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_3_file_1"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_3_file_3"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_4_file_2"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_3_file_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_2_file_3"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_3_file_2"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_3_file_4"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_4_file_3"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_3_file_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_2_file_4"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_3_file_3"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_3_file_5"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_4_file_4"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_3_file_5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_2_file_5"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_3_file_4"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_3_file_6"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_4_file_5"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_3_file_6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_2_file_6"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_3_file_5"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_3_file_7"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_4_file_6"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_3_file_7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_2_file_7"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_3_file_6"
+        app:layout_constraintEnd_toEndOf="@id/chessboard"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_4_file_7"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_4_file_0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_3_file_0"
+        app:layout_constraintStart_toStartOf="@id/chessboard"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_4_file_1"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_5_file_0"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_4_file_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_3_file_1"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_4_file_0"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_4_file_2"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_5_file_1"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_4_file_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_3_file_2"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_4_file_1"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_4_file_3"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_5_file_2"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_4_file_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_3_file_3"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_4_file_2"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_4_file_4"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_5_file_3"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_4_file_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_3_file_4"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_4_file_3"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_4_file_5"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_5_file_4"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_4_file_5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_3_file_5"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_4_file_4"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_4_file_6"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_5_file_5"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_4_file_6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_3_file_6"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_4_file_5"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_4_file_7"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_5_file_6"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_4_file_7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_3_file_7"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_4_file_6"
+        app:layout_constraintEnd_toEndOf="@id/chessboard"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_5_file_7"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_5_file_0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_4_file_0"
+        app:layout_constraintStart_toStartOf="@id/chessboard"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_5_file_1"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_6_file_0"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_5_file_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_4_file_1"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_5_file_0"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_5_file_2"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_6_file_1"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_5_file_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_4_file_2"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_5_file_1"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_5_file_3"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_6_file_2"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_5_file_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_4_file_3"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_5_file_2"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_5_file_4"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_6_file_3"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_5_file_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_4_file_4"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_5_file_3"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_5_file_5"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_6_file_4"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_5_file_5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_4_file_5"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_5_file_4"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_5_file_6"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_6_file_5"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_5_file_6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_4_file_6"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_5_file_5"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_5_file_7"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_6_file_6"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_5_file_7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_4_file_7"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_5_file_6"
+        app:layout_constraintEnd_toEndOf="@id/chessboard"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_6_file_7"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_6_file_0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_5_file_0"
+        app:layout_constraintStart_toStartOf="@id/chessboard"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_6_file_1"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_7_file_0"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_6_file_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_5_file_1"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_6_file_0"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_6_file_2"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_7_file_1"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_6_file_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_5_file_2"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_6_file_1"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_6_file_3"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_7_file_2"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_6_file_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_5_file_3"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_6_file_2"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_6_file_4"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_7_file_3"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_6_file_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_5_file_4"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_6_file_3"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_6_file_5"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_7_file_4"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_6_file_5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_5_file_5"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_6_file_4"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_6_file_6"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_7_file_5"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_6_file_6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_5_file_6"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_6_file_5"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_6_file_7"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_7_file_6"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_6_file_7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_5_file_7"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_6_file_6"
+        app:layout_constraintEnd_toEndOf="@id/chessboard"
+        app:layout_constraintTop_toBottomOf="@id/chessboard_rank_7_file_7"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_7_file_0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_6_file_0"
+        app:layout_constraintStart_toStartOf="@id/chessboard"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_7_file_1"
+        app:layout_constraintTop_toTopOf="@id/chessboard"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_7_file_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_6_file_1"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_7_file_0"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_7_file_2"
+        app:layout_constraintTop_toTopOf="@id/chessboard"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_7_file_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_6_file_2"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_7_file_1"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_7_file_3"
+        app:layout_constraintTop_toTopOf="@id/chessboard"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_7_file_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_6_file_3"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_7_file_2"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_7_file_4"
+        app:layout_constraintTop_toTopOf="@id/chessboard"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_7_file_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_6_file_4"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_7_file_3"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_7_file_5"
+        app:layout_constraintTop_toTopOf="@id/chessboard"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_7_file_5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_6_file_5"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_7_file_4"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_7_file_6"
+        app:layout_constraintTop_toTopOf="@id/chessboard"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_7_file_6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_6_file_6"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_7_file_5"
+        app:layout_constraintEnd_toStartOf="@id/chessboard_rank_7_file_7"
+        app:layout_constraintTop_toTopOf="@id/chessboard"/>
+
+    <ImageView
+        android:id="@+id/chessboard_rank_7_file_7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/chessboard_rank_6_file_7"
+        app:layout_constraintStart_toEndOf="@id/chessboard_rank_7_file_6"
+        app:layout_constraintEnd_toEndOf="@id/chessboard"
+        app:layout_constraintTop_toTopOf="@id/chessboard"/>
+
+    <TextView
+        android:id="@+id/white_player_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chessboard" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
