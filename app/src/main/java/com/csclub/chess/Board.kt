@@ -35,7 +35,7 @@ fun ChessBoard.wouldPutKingInCheck(from: ChessSquare, to: ChessSquare, player: P
 
 fun ChessBoard.isKingInCheck(player: Player): Boolean {
     // Returns true if the king of the player given is in check; that is, if any of the enemy's pieces threaten the square the king is on
-    val playerKingSquare = this.indicesOf<King>(player)
-    val enemyPlayersPieces = this.indicesOf<ChessPiece>(if (player == Player.WHITE) Player.BLACK else Player.WHITE)
+    val playerKingSquare = this.indicesOf<King>(player)[0]
+    val indicesOfEnemyPlayersPieces = this.indicesOf<ChessPiece>(if (player == Player.WHITE) Player.BLACK else Player.WHITE)
     return false
 }

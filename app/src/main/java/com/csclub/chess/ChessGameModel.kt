@@ -23,7 +23,7 @@ class ChessGameModel {
 
     fun playerHasLegalMove(): Boolean {
         // Returns true if any of the players pieces can legally move to another square on the board
-        val playersPieces = board.indicesOf<ChessPiece>(turn)
+        val indicesOfPlayersPieces = board.indicesOf<ChessPiece>(turn)
         return true
     }
 }

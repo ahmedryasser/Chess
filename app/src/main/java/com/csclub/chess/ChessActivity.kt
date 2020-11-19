@@ -3,15 +3,20 @@ package com.csclub.chess
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.TextView
 
 class ChessActivity : AppCompatActivity(), ChessView {
     private lateinit var presenter: ChessPresenter
     private lateinit var grid: Array<Array<ImageView>>
+    private lateinit var blackScore: TextView
+    private lateinit var whiteScore: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chess)
         initializeGrid()
+        blackScore = findViewById(R.id.black_player_score)
+        whiteScore = findViewById(R.id.white_player_score)
         presenter = ChessPresenter(this)
     }
 
